@@ -22,3 +22,21 @@ const obj = {a:{a1: 100, a2: 200},b: {b1: 300}};
 
 const cloneObj = JSON.parse(JSON.stringify(obj));
 ```
+### 3. How to remove a property of an object?
+
+By using ```delete``` we can remove propert from an object in JavaScript. See the following code:
+
+```
+const obj = {a: 20, b: 30, c: 40};
+
+delete obj.a
+
+//OR
+
+delete obj['a']
+```
+Note: Don't use the following code for delete:
+```obj.a = undefined```
+```console.log(obj) will give you {a: undefined}```
+Problem with this code is the key remains on its place in the hashmap, only the value is replaced with undefined. 
+Understand, that for..in loop will still iterate over that key.
