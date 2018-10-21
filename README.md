@@ -24,7 +24,7 @@ const cloneObj = JSON.parse(JSON.stringify(obj));
 ```
 ### 3. How to remove a property of an object?
 
-By using ```delete``` we can remove propert from an object in JavaScript. See the following code:
+By using ```delete``` we can remove property from an object in JavaScript. See the following code:
 
 ```
 const obj = {a: 20, b: 30, c: 40};
