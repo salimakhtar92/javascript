@@ -73,6 +73,6 @@ C) By using filter
 ```
 arrayObj = arrayObj.filter( item => item !== deleteElement);
 ```
-Note: Don't use  ```delete arrayObj[index]```
+Note: Don't use  ```delete arrayObj[index]```. Keep in mind that when you use delete for an array you could get wrong results for anArray.length. In other words, delete would remove the element but wouldn't update the value of length property
 
 
