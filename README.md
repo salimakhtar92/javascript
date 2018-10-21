@@ -41,7 +41,7 @@ Note: Don't use the following code for delete:
 Problem with this code is the key remains on its place in the hashmap, only the value is replaced with undefined. 
 Understand, that for..in loop will still iterate over that key.
 
-### 4. How to remove a specific element fron an array in javascript?
+### 4. How to remove a specific element from an array in javascript?
 A) By using ```indexOf()``` and ```splice()``` method
 ```
 const arrayObj = [1,2,3,4,5,6,7];
