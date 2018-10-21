@@ -1,4 +1,4 @@
-# Important JavaScript Question and Answers
+# Important JavaScript Questions and Answers
 
 ### 1. How can I check an array contains objects?
 
