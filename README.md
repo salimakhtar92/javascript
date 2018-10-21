@@ -63,7 +63,6 @@ function removeElement(arrayObj, deleteElement) {
    for(let i = 0; i <= arrayObj.length - 1; i++) {
        if(arrayObj[i] === deleteElement) {
           arrayObj.splice(i, 1);
-          break; // Note: if you want to remove all elements that value is 5 then remove break statement from here 
        }
    }
 }
