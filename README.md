@@ -88,3 +88,19 @@ Answer:
 1. Capturing and bubbling allow us to implement one of most powerful event handling patterns called event delegation.
 2. The idea is that if we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
 3. In the handler we get event.target, see where the event actually happened and handle it.
+
+### 7. How to convert string to title case in javascript?
+for instance: if title = "good morning john" then the out "Good Morning John".
+
+```
+const str = "good morning john";
+
+const titleCaseString = str.split(' ').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
+
+or
+
+const titleCaseString = str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+console.log(titleCaseString);
+
+```
