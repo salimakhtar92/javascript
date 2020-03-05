@@ -101,6 +101,6 @@ or
 
 const titleCaseString = str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
-console.log(titleCaseString);
+console.log(titleCaseString); // Good Morning John
 
 ```
