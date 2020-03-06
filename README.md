@@ -107,7 +107,7 @@ console.log(titleCaseString); // Good Morning John
 ### 8. Find longest sub-string from string with start index and length:
 example: if str = "aabbbcd" then output will be {index: 2, length: 3, subString: "bbb", };
 ```
-function largestSubString(str) {
+function getLongestSubString(str) {
   if(!str.trim()) {
     return "Plesae enter string";
   }
