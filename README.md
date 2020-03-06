@@ -104,3 +104,33 @@ const titleCaseString = str.split(' ').map(w => w.charAt(0).toUpperCase() + w.sl
 console.log(titleCaseString); // Good Morning John
 
 ```
+### 8. Find longest sub-string from string with start index and length:
+example: if str = "aabbbcd" then output will be {index: 2, length: 3, subString: "bbb", };
+```
+function largestSubString(str) {
+  const strArray = str.split('');
+  let count = 0, maxLength = 0, index;
+  for(let i = 0; i<strArray.length; i++) {
+    if(strArray[i] === strArray[i+1]) {
+      count++;
+    } else {
+      if(count> maxLength) {
+        maxLength = count;
+        index=i;
+      } 
+      count=0;
+    }
+  }
+  const subStrIndex = index - maxLength;
+  const subString = str.slice(subStrIndex, subStrIndex + maxLength+1)
+  return {index: subStrIndex, length: maxLength + 1, subString: subString };
+}
+
+const str = "aabbbcd";
+console.log(largestSubString(str)) // {index: 2, length: 3, subString: "bbb", }
+
+const str = "abbttrrrrer";
+console.log(largestSubString(str)) // { index: 5, length: 4, subString: "rrrr" }
+
+
+```
