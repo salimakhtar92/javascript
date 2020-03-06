@@ -108,7 +108,10 @@ console.log(titleCaseString); // Good Morning John
 example: if str = "aabbbcd" then output will be {index: 2, length: 3, subString: "bbb", };
 ```
 function largestSubString(str) {
-  const strArray = str.split('');
+  if(!str.trim()) {
+    return "Plesae enter string";
+  }
+  const strArray = str.trim().split('');
   let count = 0, maxLength = 0, index;
   for(let i = 0; i<strArray.length; i++) {
     if(strArray[i] === strArray[i+1]) {
@@ -121,9 +124,15 @@ function largestSubString(str) {
       count=0;
     }
   }
+  
   const subStrIndex = index - maxLength;
   const subString = str.slice(subStrIndex, subStrIndex + maxLength+1)
-  return {index: subStrIndex, length: maxLength + 1, subString: subString };
+  
+  if(subString) {
+    return {index: subStrIndex, length: maxLength + 1, subString: subString };
+  }
+  
+  return "No sub-string found";
 }
 
 const str = "aabbbcd";
