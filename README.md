@@ -80,7 +80,7 @@ Solution 1:
 ```str.replace(/\./g,'')```
 
 Solution 2:
-```str.split('.').join()```
+```str.split('.').join('')```
 
 ### 6. What is event delegation in JS?
 
