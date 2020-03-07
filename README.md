@@ -163,17 +163,18 @@ function foo(a,b) {
 Higher-order function is a function that accepts other function as an argument or returns a function as a return value.
 
 ```
-// foo is first order function
+// foo is the first order function
 function foo(a,b) {
     return a+b;
 }
 
-function hoc(fn) {
+// hof is the higher order function
+function hof(fn) {
    return function(x,y,z) {
       return fn(x,y) + z;
    }
 }
 
-hoc(foo)(5, 10, 15) // It will return 30
+hof(foo)(5, 10, 15) // It will return 30
 
 ```
