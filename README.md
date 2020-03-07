@@ -144,9 +144,36 @@ console.log(largestSubString(str)) // { index: 5, length: 4, subString: "rrrr" }
 
 ```
 
-### 9. What is a first order function?
+### 9. What is a first class function?
 A programming language is said to have First-class functions when functions in that language are treated like any other variable. 
 
 For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
 
 Checkout this:  https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
+
+### 10. What is a first order function?
+First-order function is a function that doesn’t accept other function as an argument and doesn’t return a function as its return value.
+```
+function foo(a,b) {
+   return a+b;
+}
+```
+
+### 11. What is a higher order function?
+Higher-order function is a function that accepts other function as an argument or returns a function as a return value.
+
+```
+// foo is first order function
+function foo(a,b) {
+    return a+b;
+}
+
+function hoc(fn) {
+   return function(x,y,z) {
+      return fn(x,y) + z;
+   }
+}
+
+hoc(foo)(5, 10, 15) // It will return 30
+
+```
