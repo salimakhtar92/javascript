@@ -178,3 +178,18 @@ function hof(fn) {
 hof(foo)(5, 10, 15) // It will return 30
 
 ```
+### 12. What is a pure function?
+A Pure function is a function where the return value is only determined by its arguments without any side effects. 
+
+If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
+
+Example:
+
+```
+function pureFunction(a, b) {
+   return a+b;
+}
+```
+A pure function produces no side effects, which means that it can’t alter any external state.
+
+JavaScript’s object arguments are references, which means that if a function were to mutate a property on an object or array parameter, that would mutate state that is accessible outside the function. Pure functions must not mutate external state.
