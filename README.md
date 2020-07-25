@@ -193,3 +193,37 @@ function pureFunction(a, b) {
 A pure function produces no side effects, which means that it can’t alter any external state.
 
 JavaScript’s object arguments are references, which means that if a function were to mutate a property on an object or array parameter, that would mutate state that is accessible outside the function. Pure functions must not mutate external state.
+
+### 13. Symmetrical difference between two arrays
+```
+if a = [1, 3, 5, 6, 7] and b = [1, 2, 4, 5, 7, 9] then symmetrical difference will be [2, 3, 4, 6, 9]
+```
+See the programs in JS
+```
+function symmetricalDiff(a, b) {
+  var newAr = [];
+
+ for(var i = 0; i < a.length || i < b.length; i++) {
+  
+  if(b.length > i  && !a.includes(b[i]))
+    newAr.push(b[i]);
+  
+  if(a.length > i && !b.includes(a[i]))
+    newAr.push(a[i]);
+ }
+  return newAr;
+}
+
+```
+
+```
+var a = [1, 3, 5, 6, 7 ], b = [1, 2, 4, 5, 7, 9];
+
+console.log(symmetricalDiff(a, b)); ---->>> [2, 3, 4, 6, 9]
+```
+
+```
+var a = [1, 3, 5, 6, 7, undefined ], b = [1, 2, 4, 5, 7, 9, 0, null];
+
+console.log(symmetricalDiff(a, b))  ---->>>>  [2, 3, 4, 6, 9, undefined, 0, null]
+```
