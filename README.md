@@ -227,3 +227,20 @@ var a = [1, 3, 5, 6, 7, undefined ], b = [1, 2, 4, 5, 7, 9, 0, null];
 
 console.log(symmetricalDiff(a, b))  ---->>>>  [2, 3, 4, 6, 9, undefined, 0, null]
 ```
+### 14. How to randomize (shuffle) a JavaScript array?
+```
+var a = [1,2,3,4,5,6,7,8];
+
+function shuffle(arr) {
+  var ar = [...arr];
+  var newAr = [];
+  while(ar.length) {
+    var rindex = Math.floor(Math.random()*ar.length);
+    var item = ar.splice(rindex,1)[0];
+    newAr.push(item)
+  }
+  return newAr;
+}
+
+console.log(shuffle(a))
+```
