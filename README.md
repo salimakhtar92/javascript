@@ -244,3 +244,18 @@ function shuffle(arr) {
 
 console.log(shuffle(a))
 ```
+
+### 15. decamelize the string
+
+Examples: bodyShape -> body_Shape, counterValue -> counter_Value etc.
+```
+const convertKeyIntoString = (strKey, separator = '_') => {
+    if(!strKey) {
+        return;
+    }
+	return strKey
+        .replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
+        .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2');
+};
+```
+
