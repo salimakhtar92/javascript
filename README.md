@@ -259,3 +259,36 @@ const convertKeyIntoString = (strKey, separator = '_') => {
 };
 ```
 
+### 16. Find most frequently occurring character
+```
+function findCharOccurance(str) {
+  const occurances = new Map();
+  for(const char of str) {
+    /*
+      if(occurances.get(char)) {
+        occurances.set(char, occurances.get(char) + 1);
+      } else {
+        occurances.set(char, 1);
+      }
+    */
+    occurances.set(char, (occurances.get(char) || 0) + 1);
+  }
+  
+  const maxCount = Math.max(...occurances.values());
+  
+  const result = [];
+  for(const [key, value] of occurances) {
+    if(value === maxCount) {
+      result.push(key);
+    }
+  }
+  return result.length > 1 ? result : result[0];
+}
+
+console.log(findCharOccurance("abcacde")); // ['a', 'c'];
+
+console.log(findCharOccurance("abca")); // a
+
+```
+
+
